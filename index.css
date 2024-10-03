@@ -515,7 +515,7 @@
   /* home */
   
   .home {
-    background-image: url(./assets/home/background-home-mobile.jpg);
+    background-image: url(./assets/home/background-home-mobile.jpg); 
   }
   
   @media (min-width: 35rem) {
@@ -527,7 +527,7 @@
   
   @media (min-width: 45rem) {
     .home {
-      background-image: url(./assets/home/background-home-desktop.jpg);
+      background-image: url(./assets/home/background-home-desktop.jpg); 
     }
   }
   
