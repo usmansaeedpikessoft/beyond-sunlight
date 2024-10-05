@@ -284,7 +284,7 @@
   
   .large-button {
     font-size: 2rem;
-    position: relative;
+    position: absolute;
     display: inline-grid;
     z-index: 1;
     place-items: center;
@@ -938,3 +938,11 @@
   }
 }
 /* ... other responsive styles ... */
+body {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.fade-out {
+  opacity: 0;
+}
