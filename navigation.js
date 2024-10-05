@@ -1,14 +1,19 @@
-const nav = document.querySelector(".primary-navigation");
-const navToggle = document.querySelector(".mobile-nav-toggle");
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector(".primary-navigation");
+  const navToggle = document.querySelector(".mobile-nav-toggle");
 
-navToggle.addEventListener("click", () => {
-    
-    const visiblity = nav.getAttribute("data-visible");
-    if (visiblity === "false") {
+  if (nav && navToggle) {
+    navToggle.addEventListener("click", () => {
+      const visibility = nav.getAttribute("data-visible");
+      if (visibility === "false") {
         nav.setAttribute("data-visible", true);
         navToggle.setAttribute("aria-expanded", true);
-    } else {
+      } else {
         nav.setAttribute("data-visible", false);
         navToggle.setAttribute("aria-expanded", false);
-    }
-})
+      }
+    });
+  } else {
+    console.warn("Navigation elements not found. Make sure the HTML structure is correct.");
+  }
+});

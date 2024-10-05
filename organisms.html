@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet">
+      
+  <!-- Our custom CSS -->
+  <link rel="stylesheet" href="index.css">
+  <title>Frontend Mentor | Space tourism website</title>
+  <script src="navigation.js" defer></script>
+  <script src="tabs.js" defer></script>
+</head>
+
+<body class="destination">
+  <a class="skip-to-content" href="#main">Skip to content</a>
+  <header class="primary-header flex">
+   <!-- <div>
+      <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo">
+    </div> -->
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+    <nav>
+        <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+          <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="index.html"><span aria-hidden="true"></span>Home</a></li>
+          <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="planetography.html"><span aria-hidden="true"></span>Planetograpghy</a></li>
+          <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="atmosphere.html"><span aria-hidden="true"></span>Atmospehere</a></li>
+          <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="zonation.html"><span aria-hidden="true"></span>Zonations</a></li>
+          <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="topography.html"><span aria-hidden="true"></span>Topography</a></li>
+          <li ><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="geomorphology.html"><span aria-hidden="true"></span>Geomorphology</a></li>
+          <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="organisms.html"><span aria-hidden="true"></span>Organisms</a></li>
+          <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="phylogeny.html"><span aria-hidden="true"></span>Phylogeny</a></li>
+          <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="conclusion.html"><span aria-hidden="true"></span>Conclusion</a>  
+        </ul>
+    </nav>
+  </header>
+  
+  <main id="main" class="grid-container grid-container--destination flow">
+    <h1 class="numbered-title"><span aria-hidden="true">06</span> ORGANISMS</h1>
+    
+    <!-- Images for all 13 tabs -->
+    <picture id="image-1">
+      <source srcset="assets/destination/org-sect1.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect1.jpeg" alt="image-1">
+    </picture>
+    <picture hidden id="image-2">
+      <source srcset="assets/destination/org-sect2.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect2.jpeg" alt="Northern Chemotrophs">
+    </picture>
+    <picture hidden id="image-3">
+      <source srcset="assets/destination/org-sect3.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect3.jpeg" alt="Northern Chemotrophs">
+    </picture>
+    <picture hidden id="image-4">
+      <source srcset="assets/destination/org-sect4.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect4.jpeg" alt="Northern Chemotrophs">
+    </picture>
+    <picture hidden id="image-5">
+      <source srcset="assets/destination/org-sect5.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect5.jpeg" alt="Northern Chemotrophs">
+    </picture>
+    <picture hidden id="image-6">
+      <source srcset="assets/destination/org-sect6.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect6.jpeg" alt="Northern Chemotrophs">
+    </picture>
+    <picture hidden id="image-7">
+      <source srcset="assets/destination/org-sect7.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect7.jpeg" alt="Northern Chemotrophs">
+    </picture>
+    <picture hidden id="image-8">
+      <source srcset="assets/destination/org-sect8.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect8.jpeg" alt="image-8">
+    </picture>
+    <picture hidden id="image-9">
+      <source srcset="assets/destination/org-sect9.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect9.jpeg" alt="image-9">
+    </picture>
+    <!-- Add pictures for images 2-13, following the same structure -->
+    <picture hidden id="image-10">
+      <source srcset="assets/destination/org-sect10.jpeg" type="image/jpeg">
+      <img src="assets/destination/org-sect10.jpeg" alt="image-10">
+    </picture>
+    
+    <div class="tab-list underline-indicators flex" role="tablist" aria-label="organism list">
+        <button aria-selected="true" role="tab" aria-controls="tab-1" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="0" data-image="image-11">Northern Chemotrophs</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-2" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="-1" data-image="image-2">Microbial Communities</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-3" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="-1" data-image="image-3">Producers</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-4" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="-1" data-image="image-4">Primary Consumers</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-5" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="-1" data-image="image-5">Secondary Consumers</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-6" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="-1" data-image="image-6">Southern Chemotrophs</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-7" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="-1" data-image="image-7">Microbial Communities 2</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-8" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="-1" data-image="image-8">Producers 2</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-9" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="-1" data-image="image-9">Primary Consumers 2</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-10" class="uppercase ff-sans-cond text-accent letter-spacing-0" tabindex="-1" data-image="image-10">Secondary Consumers 2</button>
+        <!-- <button aria-selected="false" role="tab" aria-controls="tab-11" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="image-11">Tertiary Consumers</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-12" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="image-12">Decomposers</button>
+        <button aria-selected="false" role="tab" aria-controls="tab-13" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="image-13">Symbiotic Relationships</button>
+        -->
+      </div>
+
+    <!-- Tab content for all 13 tabs -->
+   <article class="destination-info flow" id="tab-1" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Northern Chemotrophs: The Basalt Spires</h2>
+      <ol>
+        <li>Live in deep, icy oceans near the planet's north pole.</li>
+        <li>Forms towering, columnar structures resembling black rocky forests.</li>
+        <li>Extracts energy from sulfur and methane compounds from the planet's mantle.</li>
+        <li>Covered in protective mineral layers for pressure and temperature resistance.</li>
+        <li>Thrives in high-pressure, high-temperature environments.</li>
+        <li>Found on the ocean floor, stretching towards the ice crust underside.</li>
+        <li>Highly specialized root system for energy extraction.</li>
+        <li>Endures extreme conditions in the absence of sunlight.</li>
+       </ol>  
+    <!--<p>Northern Chemotrophs are unique organisms that thrive in the deep, icy oceans near the planet's north pole. These fascinating creatures have adapted to extreme conditions and play a crucial role in the planet's ecosystem.</p> 
+      -->
+    </article> 
+    
+    <article hidden class="destination-info flow" id="tab-2" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Crybobecteria</h2>
+      <ol>
+        <li>A psychrophilic (cold-loving) bacterium that thrives near hydrothermal vents.  </li>
+        <li>It uses hydrogen sulfide from the vents to produce energy via chemosynthesis, withstanding extreme cold and pressure.</li>
+        <li>Forms a microbial mat around the vents, providing the primary energy source for the local ecosystem.</li>
+        
+       </ol>  
+      <!-- <p>Northern Chemotrophs are unique organisms that thrive in the deep, icy oceans near the planet's north pole. These fascinating creatures have adapted to extreme conditions and play a crucial role in the planet's ecosystem.</p>
+      -->
+    </article>
+    <article hidden class="destination-info flow" id="tab-3" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Glacial Fern</h2>
+      <ol>
+        <li>A hardy, root-like organism that grows around hydrothermal vents. </li>
+        <li>It has no need for sunlight and instead absorbs minerals from the hydrothermal vent water, converting them into energy through chemosynthesis.</li>
+        <li>Primary producer that sustains the ecosystem by releasing energy-rich compounds for primary consumers to feed on.</li>
+      </ol>  
+     <!-- <p>Northern Chemotrophs are unique organisms that thrive in the deep, icy oceans near the planet's north pole. These fascinating creatures have adapted to extreme conditions and play a crucial role in the planet's ecosystem.</p>
+      -->
+    </article>
+    <article hidden class="destination-info flow" id="tab-4" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Vent Shrimper</h2>
+      <ol>
+        <li>A shrimp-like creature adapted to feeding on Glacial Fern and microbial mats.</li>
+        <li>Its tough, insulated exoskeleton protects it from both predators and extreme cold. Specialized appendages allow it to scrape bacterial mats and consume the ferns.</li>
+        <li>Important herbivore and detritivore, regulating the growth of microbial and plant life in the polar region.</li>
+          
+      </ol>  
+      <!--<p>Northern Chemotrophs are unique organisms that thrive in the deep, icy oceans near the planet's north pole. These fascinating creatures have adapted to extreme conditions and play a crucial role in the planet's ecosystem.</p>
+    -->
+    </article>
+    <article hidden class="destination-info flow" id="tab-5" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Glacial Stalker</h2>
+      <ol>
+        <li>A large, predatory fish with bioluminescent spots.</li>
+        <li> It uses bioluminescence to attract or confuse prey, primarily feeding on Vent Shrimpers. Its keen sense of detecting sulfur compounds helps it locate prey.</li>
+        <li>Apex predator in the northern polar region, controlling the population of primary consumers and maintaining ecosystem stability.</li>
+          
+      </ol>  
+     <!-- <p>Northern Chemotrophs are unique organisms that thrive in the deep, icy oceans near the planet's north pole. These fascinating creatures have adapted to extreme conditions and play a crucial role in the planet's ecosystem.</p>
+      -->
+    </article>
+    <article hidden class="destination-info flow" id="tab-6" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Southern Chemotrophs: The Abyssal Webs</h2>
+      <ol>
+        <li>Delicate, web-like entities spreading across the ocean floor.</li>
+        <li>Anchored to rocky bed by mineral-coated tendrils. </li>
+        <li>Extracts chemical energy from hydrogen and iron compounds.</li>
+        <li>Supports ecosystem relying entirely on chemical energy.</li>
+        <li>Thrives in complete darkness, lacking sunlight.</li>
+        <li>Found in ocean sediments and rocky ocean floor.</li>
+        <li>Supports dependent species feeding on waste products.</li>
+          
+      </ol> 
+      <!--<p>Northern Chemotrophs are unique organisms that thrive in the deep, icy oceans near the planet's north pole. These fascinating creatures have adapted to extreme conditions and play a crucial role in the planet's ecosystem.</p>
+    -->
+    </article>
+    <article hidden class="destination-info flow" id="tab-7" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Methanocies</h2>
+      <ol>
+        <li>DMethane-utilizing archaea that thrive in the cold methane seeps found near the southern pole.</li>
+        <li>Converts methane into organic compounds through chemosynthesis.</li>
+        <li>Provides the foundation for life near methane seeps, essential for all other species in the region.</li>
+      </ol>
+     
+      <!-- <p>Northern Chemotrophs are unique organisms that thrive in the deep, icy oceans near the planet's north pole. These fascinating creatures have adapted to extreme conditions and play a crucial role in the planet's ecosystem.</p>
+    -->
+    </article>
+    <article hidden class="destination-info flow" id="tab-8" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Hydro Stalk</h2>
+      
+      <ol>
+        <li>A tubeworm-like chemosynthetic producer growing around methane seeps.</li>
+        <li>Extracts hydrogen sulfide from the seep's water to sustain itself, with symbiotic bacteria in its tissues.</li>
+        <li>Primary producer, converting methane and sulfides into energy, supporting an ecosystem based on chemical energy.</li>
+      </ol>
+      
+      <!--<p>Northern Chemotrophs are unique organisms that thrive in the deep, icy oceans near the planet's north pole. These fascinating creatures have adapted to extreme conditions and play a crucial role in the planet's ecosystem.</p>
+    -->
+    </article>
+    <article hidden class="destination-info flow" id="tab-9" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Seep Grazer</h2>
+     
+      <ol>
+        <li>A small, armored snail that feeds on Hydro Stalk.</li>
+        <li>Its shell provides protection against predators and its radula allows it to scrape algae and other microbial growth from surfaces near methane seeps.</li>
+        <li>Primary consumer that grazes on chemosynthetic producers, forming a vital link in the polar food web.</li>
+      </ol>
+      <!--<p>Northern Chemotrophs are unique organisms that thrive in the deep, icy oceans near the planet's north pole. These fascinating creatures have adapted to extreme conditions and play a crucial role in the planet's ecosystem.</p>
+    -->
+    </article>
+    <!-- Add articles for tabs 2-13, following the same structure -->
+    <article hidden class="destination-info flow" id="tab-10" tabindex="0" role="tabpanel">
+      <h2 class="fs-600 uppercase ff-serif">Abyssal Claw</h2>
+      
+      <ol>
+        <li>A deep-sea crustacean with sharp claws and a hardened exoskeleton.</li>
+        <li>It has powerful claws to break open the shells of Seep Grazers and other small organisms. Its highly sensitive chemical receptors allow it to detect prey in the methane-rich waters.</li>
+        <li>Apex predator of the southern polar region, playing a crucial role in controlling herbivore populations and promoting biodiversity.</li>
+      </ol>
+     <!-- <p>Symbiotic relationships are abundant in this alien ecosystem, showcasing the intricate connections between different species. These relationships range from mutualistic partnerships to complex parasitic interactions, demonstrating the diversity of life on this planet.</p>
+      -->
+    </article>
+
+  </main>
+  
+<body>
+
+</body>
+</html>
