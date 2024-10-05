@@ -288,7 +288,7 @@
     display: inline-grid;
     z-index: 1;
     place-items: center;
-    padding: 0 2em;
+    padding: 0 1em;
     border-radius: 50%;
     aspect-ratio: 1;
     text-decoration: none;
@@ -515,19 +515,22 @@
   /* home */
   
   .home {
-    background-image: url(./assets/home/background-home-mobile.jpg); 
+    /*background-image: url(./assets/home/background-home-mobile.jpg);*/
+    background-image: url(./assets/home/home2.jpeg);
   }
   
   @media (min-width: 35rem) {
     .home {
       background-position: center center;
-      background-image: url(./assets/home/background-home-tablet.jpg);
+      background-image: url(./assets/home/home2.jpeg);
     }
   }
   
-  @media (min-width: 45rem) {
+  @media (min-width: 35rem) {
     .home {
-      background-image: url(./assets/home/background-home-desktop.jpg); 
+     background-image: url(./assets/home/home2.jpeg);
+     /* background-image: url(./assets/home/home1.jpeg); */
+      /*background-image: url(./assets/home/background-home-desktop.jpg);*/
     }
   }
   
@@ -595,7 +598,7 @@
   /* ------------------------ */
   
   .grid-container {
-    text-align: center;
+    text-align: left;
     display: grid;
     place-items: center;
     padding-inline: 1rem;
@@ -726,7 +729,7 @@
   
   @media (min-width: 45em) {
     .grid-container {
-      text-align: left;
+      text-align: absolute;
       column-gap: var(--container-gap, 2rem);
       grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
           1rem,
@@ -736,7 +739,7 @@
   
     .grid-container--home {
       padding-bottom: max(6rem, 20vh);
-      align-items: end;
+      align-items: absolute;
     }
     .grid-container--home > *:first-child {
       grid-column: 2;
@@ -747,6 +750,7 @@
   
     .grid-container--destination {
       justify-items: start;
+      align-content: start;
       align-content: start;
       grid-template-areas:
         ". title title ."

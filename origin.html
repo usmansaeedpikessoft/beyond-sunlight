@@ -13,7 +13,7 @@
       
   <!-- Our custom CSS -->
   <link rel="stylesheet" href="index.css">
-  <title>Frontend Mentor | Space tourism website</title>
+  <title>Beyond | Sunlight</title>
   <script src="navigation.js" defer></script>
   <script src="tabs.js" defer></script>
 </head>
@@ -28,28 +28,29 @@
     <nav>
         <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
           <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="index.html"><span aria-hidden="true"></span>Home</a></li>
+          <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="origin.html"><span aria-hidden="true"></span>Origin</a></li>
           <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="planetography.html"><span aria-hidden="true"></span>Planetograpghy</a></li>
           <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="atmosphere.html"><span aria-hidden="true"></span>Atmospehere</a></li>
           <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="zonation.html"><span aria-hidden="true"></span>Zonations</a></li>
           <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="topography.html"><span aria-hidden="true"></span>Topography</a></li>
-          <li ><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="geomorphology.html"><span aria-hidden="true"></span>Geomorphology</a></li>
+          <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="geomorphology.html"><span aria-hidden="true"></span>Geomorphology</a></li>
           <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="organisms.html"><span aria-hidden="true"></span>Organisms</a></li>
-          <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="phylogeny.html"><span aria-hidden="true"></span>Phylogeny</a></li>
+          <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="phylogeny.html"><span aria-hidden="true"></span>Phylogeny</a></li>
           <li><a class="ff-sans-cond uppercase text-white letter-spacing-0" href="conclusion.html"><span aria-hidden="true"></span>Conclusion</a>  
         </ul>
     </nav>
   </header>
   
   <main id="main" class="grid-container grid-container--destination flow">
-    <h1 class="numbered-title"><span aria-hidden="true">01</span> Pick your destination</h1>
+    <h1 class="numbered-title"><span aria-hidden="true">01</span> ORIGIN</h1>
     
     <picture id="moon-image">
-      <source srcset="assets/destination/image-moon.webp" type="image/webp">
-      <img src="assets/destination/image-moon.png" alt="the moon">
+      <source srcset="assets/destination/atmosphere.jpeg" type="image/jpeg">
+      <img src="assets/destination/atmosphere.jpeg" alt="the moon">
     </picture>
     <picture hidden id="mars-image">
-      <source srcset="assets/destination/image-mars.webp" type="image/webp">
-      <img src="assets/destination/image-mars.png" alt="the planet mars">
+      <source srcset="assets/destination/origin-sec1.jpeg" type="image/jpeg">
+      <img src="assets/destination/origin-sec1.jpeg" alt="the planet mars">
     </picture>
     <picture hidden id="europa-image">
       <source srcset="assets/destination/image-europa.webp" type="image/webp">
@@ -65,23 +66,25 @@
     
     
     <div class="tab-list underline-indicators flex" role="tablist" aria-label="destination list">
-        <button aria-selected="true" role="tab" aria-controls="moon-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="0" data-image="moon-image">Moon</button>
-        <button aria-selected="false" role="tab" aria-controls="mars-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="mars-image">Mars</button>
-        <button aria-selected="false" role="tab" aria-controls="europa-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="europa-image">Europa</button>
+        <button aria-selected="true" role="tab" aria-controls="moon-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="0" data-image="moon-image">Section 1</button>
+        <button aria-selected="false" role="tab" aria-controls="mars-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="mars-image">Formation of Water Bodies</button>
+       <!-- <button aria-selected="false" role="tab" aria-controls="europa-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="europa-image">Europa</button>
         <button aria-selected="false" role="tab" aria-controls="titan-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="titan-image">Titan</button>
         <button aria-selected="false" role="tab" aria-controls="carina-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="carina-image">Carina</button>
-
+        -->
     </div>
 
     <!-- The moon -->
     <article class="destination-info flow" id="moon-tab" tabindex="0" role="tabpanel">
-      <h2 class="fs-800 uppercase ff-serif">Moon</h2>
+      <h2 class="fs-600 uppercase ff-serif">Headuing Needed</h2>
 
-      <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
+      <!-- <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
       regain perspective and come back refreshed. While you’re there, take in some history 
-      by visiting the Luna 2 and Apollo 11 landing sites.</p>
-      
-      <div class="destination-meta flex">
+      by visiting the Luna 2 and Apollo 11 landing sites.</p> -->
+      <p>
+        Text Needed
+      </p>
+     <!-- <div class="destination-meta flex">
         <div>
           <h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
           <p class="ff-serif uppercase">384,400 km</p>
@@ -90,18 +93,16 @@
           <h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
           <p class="ff-serif uppercase">3 days</p>
         </div>
-      </div>
+      </div>-->
     </article>
     
     <!-- Mars -->
     <article hidden class="destination-info flow" id="mars-tab" tabindex="0"  role="tabpanel">
-      <h2 class="fs-800 uppercase ff-serif">Mars</h2>
+      <h2 class="fs-500 uppercase ff-serif"> </h2>
 
-      <p>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
-  the tallest planetary mountain in our solar system. It’s two and a half times 
-  the size of Everest!</p>
+      <p>The vast water bodies of Thalassokhimia formed through cosmic processes tied to star formation and planetary development. Hydrogen, the most abundant element, and oxygen, forged in the cores of massive stars, combined in stellar nurseries to create water molecules. As these stars reached the end of their life cycles, they released water vapor into space, which later condensed in Thalassokhimia's atmosphere. Volcanic and tectonic activity on the planet then released water vapor from beneath the surface, which rained down to fill the basins, forming oceans that sustain an ecosystem driven by chemosynthesis.</p>
       
-      <div class="destination-meta flex">
+      <!--<div class="destination-meta flex">
         <div>
           <h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
           <p class="ff-serif uppercase">225 mil. km</p>
@@ -110,7 +111,7 @@
           <h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
           <p class="ff-serif uppercase">9 months</p>
         </div>
-      </div>
+      </div> -->
     </article>
     
     <!-- Europa -->
