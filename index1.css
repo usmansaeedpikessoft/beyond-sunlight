@@ -841,7 +841,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-bottom: 2rem;
 }
 
@@ -850,17 +850,22 @@
   border: none;
   color: #fff;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-bottom: 3px solid transparent;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .tab-list button[aria-selected="true"] {
   border-bottom-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tab-list button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .organism-details {
@@ -879,4 +884,128 @@
   }
 }
 
+/* Add this to your existing CSS */
+.tab-list {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab-list > * {
+  flex: 0 1 auto;
+  margin: 0.5rem;
+}
+
+@media (max-width: 35rem) {
+  .tab-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tab-list > * {
+    width: 100%;
+    max-width: 10rem;
+  }
+}
+
 /* ... other responsive styles ... */
+
+/* Add this to your existing CSS */
+.video-container {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+}
+
+/* Add this to your existing CSS if it's not already there */
+.video-container {
+  display: flex;
+  justify-content: absolute;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.video-container video {
+  max-width: 100%;
+  height: auto;
+  max-height: 70vh; /* Adjust this value as needed */
+}
+
+@media (min-width: 45em) {
+  .grid-container--destination {
+    grid-template-areas:
+      '. title title .'
+      '. video video .'
+      '. content content .';
+  }
+
+  .numbered-title {
+    grid-area: title;
+  }
+
+  .video-container {
+    grid-area: video;
+  }
+
+  .destination-info {
+    grid-area: content;
+  }
+}
+
+.conclusion {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.grid-container--conclusion {
+  --flow-space: 2rem;
+  grid-template-areas:
+    'title'
+    'video'
+    'content';
+}
+
+.numbered-title {
+  grid-area: title;
+}
+
+.video-container {
+  grid-area: video;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem 0;
+}
+
+.video-container video {
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+.conclusion-info {
+  grid-area: content;
+}
+
+@media (min-width: 45em) {
+  .grid-container--conclusion {
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 55rem) minmax(1rem, 1fr);
+    grid-template-areas:
+      '. title .'
+      '. video .'
+      '. content .';
+  }
+}
+
+@media (min-width: 65em) {
+  .grid-container--conclusion {
+    grid-template-areas:
+      '. title .'
+      '. video .'
+      '. content .';
+  }
+}

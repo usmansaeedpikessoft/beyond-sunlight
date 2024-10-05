@@ -1,51 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const tabList = document.querySelector('.tab-list');
-  const tabs = tabList.querySelectorAll('button');
+  const tabList = document.querySelector('[role="tablist"]');
+  const tabs = tabList.querySelectorAll('[role="tab"]');
   const tabPanels = document.querySelectorAll('[role="tabpanel"]');
-  const images = document.querySelectorAll('picture');
+  const videos = document.querySelectorAll('.video-container');
 
-  tabList.addEventListener('click', (e) => {
-    const clickedTab = e.target.closest('button');
+  function hideAllTabPanels() {
+    tabPanels.forEach(panel => panel.hidden = true);
+  }
+
+  function hideAllVideos() {
+    videos.forEach(video => {
+      video.hidden = true;
+      video.querySelector('video').pause();
+    });
+  }
+
+  function showTab(tab) {
+    const targetId = tab.getAttribute('aria-controls');
+    const targetVideo = tab.getAttribute('data-video');
+
+    hideAllTabPanels();
+    hideAllVideos();
+
+    document.getElementById(targetId).hidden = false;
+    document.getElementById(targetVideo).hidden = false;
+
+    tabs.forEach(t => t.setAttribute('aria-selected', false));
+    tab.setAttribute('aria-selected', true);
+  }
+
+  tabList.addEventListener('click', e => {
+    const clickedTab = e.target.closest('[role="tab"]');
     if (!clickedTab) return;
-    
-    const targetId = clickedTab.getAttribute('aria-controls');
-    const targetImage = clickedTab.getAttribute('data-image');
-
-    // Update selected state
-    tabs.forEach(tab => {
-      tab.setAttribute('aria-selected', tab === clickedTab);
-      tab.setAttribute('tabindex', tab === clickedTab ? '0' : '-1');
-    });
-
-    // Show selected tab panel
-    tabPanels.forEach(panel => {
-      panel.hidden = panel.id !== targetId;
-    });
-
-    // Show selected image
-    images.forEach(img => {
-      img.hidden = img.id !== targetImage;
-    });
+    showTab(clickedTab);
   });
 
-  // Keyboard navigation
-  tabList.addEventListener('keydown', (e) => {
-    const currentTab = document.activeElement;
-    let newTab;
+  tabList.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
 
-    switch (e.key) {
-      case 'ArrowLeft':
-        newTab = currentTab.previousElementSibling || tabs[tabs.length - 1];
-        break;
-      case 'ArrowRight':
-        newTab = currentTab.nextElementSibling || tabs[0];
-        break;
-      default:
-        return;
+    const currentTab = document.activeElement;
+    const tabArray = Array.from(tabs);
+    const currentIndex = tabArray.indexOf(currentTab);
+
+    let newTab;
+    if (e.key === 'ArrowLeft') {
+      newTab = tabArray[currentIndex - 1] || tabArray[tabArray.length - 1];
+    } else {
+      newTab = tabArray[currentIndex + 1] || tabArray[0];
     }
 
-    newTab.click();
     newTab.focus();
+    showTab(newTab);
     e.preventDefault();
   });
+
+  // Show the first tab by default
+  showTab(tabs[0]);
 });

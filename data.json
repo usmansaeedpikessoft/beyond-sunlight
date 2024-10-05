@@ -10,16 +10,7 @@
       "distance": "384,400 km",
       "travel": "3 days"
     },
-    {
-      "name": "Moon2",
-      "images": {
-        "png": "./assets/destination/image-moon.png",
-        "webp": "./assets/destination/image-moon.webp"
-      },
-      "description": "Testing thid element",
-      "distance": "384,400 km",
-      "travel": "3 days"
-    },
+    
     {
       "name": "Mars",
       "images": {
