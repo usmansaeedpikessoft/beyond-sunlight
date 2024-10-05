@@ -1,59 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const tabList = document.querySelector('[role="tablist"]');
-  const tabs = tabList.querySelectorAll('[role="tab"]');
-  const tabPanels = document.querySelectorAll('[role="tabpanel"]');
-  const videos = document.querySelectorAll('.video-container');
+  // Function to initialize tabs on a page
+  function initializeTabs() {
+    const tabList = document.querySelector('[role="tablist"]');
+    if (!tabList) return; // Exit if there's no tab list on this page
 
-  function hideAllTabPanels() {
-    tabPanels.forEach(panel => panel.hidden = true);
-  }
+    const tabs = tabList.querySelectorAll('[role="tab"]');
+    const tabPanels = document.querySelectorAll('[role="tabpanel"]');
 
-  function hideAllVideos() {
-    videos.forEach(video => {
-      video.hidden = true;
-      video.querySelector('video').pause();
-    });
-  }
-
-  function showTab(tab) {
-    const targetId = tab.getAttribute('aria-controls');
-    const targetVideo = tab.getAttribute('data-video');
-
-    hideAllTabPanels();
-    hideAllVideos();
-
-    document.getElementById(targetId).hidden = false;
-    document.getElementById(targetVideo).hidden = false;
-
-    tabs.forEach(t => t.setAttribute('aria-selected', false));
-    tab.setAttribute('aria-selected', true);
-  }
-
-  tabList.addEventListener('click', e => {
-    const clickedTab = e.target.closest('[role="tab"]');
-    if (!clickedTab) return;
-    showTab(clickedTab);
-  });
-
-  tabList.addEventListener('keydown', e => {
-    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-
-    const currentTab = document.activeElement;
-    const tabArray = Array.from(tabs);
-    const currentIndex = tabArray.indexOf(currentTab);
-
-    let newTab;
-    if (e.key === 'ArrowLeft') {
-      newTab = tabArray[currentIndex - 1] || tabArray[tabArray.length - 1];
-    } else {
-      newTab = tabArray[currentIndex + 1] || tabArray[0];
+    function hideAllTabPanels() {
+      tabPanels.forEach(panel => panel.hidden = true);
     }
 
-    newTab.focus();
-    showTab(newTab);
-    e.preventDefault();
-  });
+    function showTab(tab) {
+      const targetId = tab.getAttribute('aria-controls');
+      hideAllTabPanels();
 
-  // Show the first tab by default
-  showTab(tabs[0]);
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) targetPanel.hidden = false;
+
+      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+      tab.setAttribute('aria-selected', 'true');
+
+      // Handle images if they exist
+      const targetImage = tab.getAttribute('data-image');
+      if (targetImage) {
+        document.querySelectorAll('picture').forEach(img => img.hidden = true);
+        const img = document.getElementById(targetImage);
+        if (img) img.hidden = false;
+      }
+    }
+
+    tabList.addEventListener('click', e => {
+      const clickedTab = e.target.closest('[role="tab"]');
+      if (!clickedTab) return;
+      showTab(clickedTab);
+    });
+
+    tabList.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+
+      const currentTab = document.activeElement;
+      const tabArray = Array.from(tabs);
+      const currentIndex = tabArray.indexOf(currentTab);
+
+      let newTab;
+      if (e.key === 'ArrowLeft') {
+        newTab = tabArray[currentIndex - 1] || tabArray[tabArray.length - 1];
+      } else {
+        newTab = tabArray[currentIndex + 1] || tabArray[0];
+      }
+
+      newTab.focus();
+      showTab(newTab);
+      e.preventDefault();
+    });
+
+    // Show the first tab by default
+    if (tabs.length > 0) {
+      showTab(tabs[0]);
+    }
+  }
+
+  // Initialize tabs
+  initializeTabs();
 });
